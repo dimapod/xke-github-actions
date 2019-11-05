@@ -23,7 +23,7 @@ jobs:
         npm run build
       env:
         CI: true
-    - name: docker image 6
+    - name: docker image 7
       env:
         BRANCH: ${{ github.ref }}
         SECRET: ${{ secrets.dockerhub_pwd }}
