@@ -23,7 +23,7 @@ jobs:
         npm run build
       env:
         CI: true
-    - name: docker image 2
+    - name: docker image 3
       env:
         BRANCH: ${{ github.ref }}
       run: |
