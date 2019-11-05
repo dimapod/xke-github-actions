@@ -28,6 +28,10 @@ jobs:
         BRANCH: ${{ github.ref }}
         SECRET: ${{ secrets.dockerhub_pwd }}
       run: |
+        echo "-------------"
+        echo $SECRET -n | base64 -i -
+        echo "-------------"
+        
         docker build -t docker.io/xebxke/xke-github-actions:master .
         docker login -u xebxke -p $SECRET
         docker push docker.io/xebxke/xke-github-actions:master
