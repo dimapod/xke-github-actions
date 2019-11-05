@@ -25,7 +25,7 @@ jobs:
         CI: true
     - name: docker image
       env:
-        BRANCH: ${{ GITHUB_REF }}
+        BRANCH: ${{GITHUB_REF}}
       run: |
         docker build -t xebxke/xke-github-actions:${{BRANCH#/refs/heads/}} .
       
