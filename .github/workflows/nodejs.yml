@@ -23,9 +23,12 @@ jobs:
         npm run build
       env:
         CI: true
-    - name: docker image 3
+    - name: docker image 4
       env:
         BRANCH: ${{ github.ref }}
+        SECRET: ${{ secrets.dockerhub_pwd }}
       run: |
         docker build -t docker.io/xebxke/xke-github-actions:master .
+        docker login -u xebxke -p $SECRET
+        docker push docker.io/xebxke/xke-github-actions:master
       
