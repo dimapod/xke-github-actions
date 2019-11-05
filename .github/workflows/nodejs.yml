@@ -5,8 +5,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: node:8-alpine
 
     strategy:
       matrix:
@@ -26,6 +24,8 @@ jobs:
       env:
         CI: true
     - name: docker image
+      env:
+        BRANCH: ${{ GITHUB_REF }}
       run: |
-        docker build -t xebxke/xke-github-actions:${BRANCH#/ref/head/} .
+        docker build -t xebxke/xke-github-actions:${{BRANCH#/ref/head/}} .
       
