@@ -27,5 +27,5 @@ jobs:
       env:
         BRANCH: ${{ github.ref }}
       run: |
-        docker build -t xebxke/xke-github-actions:${{BRANCH#/refs/heads/}} .
+        docker build -t docker.io/xebxke/xke-github-actions:${{BRANCH#/refs/heads/}}-${{github.sha}} .
       
