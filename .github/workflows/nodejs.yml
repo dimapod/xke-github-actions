@@ -25,3 +25,7 @@ jobs:
         npm run build
       env:
         CI: true
+    - name: docker image
+      run: |
+        docker build -t xebxke/xke-github-actions:${BRANCH#/ref/head/} .
+      
